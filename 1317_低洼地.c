@@ -9,3 +9,35 @@
     一个数，可能积水低洼地的数目。
 */
 
+#include <stdio.h>
+#include <stdbool.h>
+
+int main(void) {
+    int prev, hei, cnt, n, i, flag;
+    /*
+    prev: heigh of previously mountain
+    hei: heigh of this mountain
+    n: loop times
+    i: count loop times
+    flag: false if rise or true if decline
+    */
+    prev = -1;
+    cnt = 0;
+    flag = false;
+    scanf("%d", &n);
+
+    for (i=0; i<n; i++) {
+        scanf("%d", &hei);
+        if (hei>prev && flag) {
+            cnt++;
+            flag = false;
+        } else if (hei<prev) {
+            flag = true;
+        }
+        prev = hei;
+    }
+
+    printf("%d\n", cnt);
+
+    return 0;
+}
