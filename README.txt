@@ -1,2 +1,1 @@
-this is a test
-Hello World
+Just some possibilities solution of questions that belong to luogu.
